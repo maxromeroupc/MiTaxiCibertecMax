@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "945792127154",
+    "firebase_url": "https://mitaxicibertexmax.firebaseio.com",
+    "project_id": "mitaxicibertexmax",
+    "storage_bucket": "mitaxicibertexmax.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945792127154:android:c659dbb76f4da083ccb9ab",
+        "android_client_info": {
+          "package_name": "com.example.mitaxicibertecmax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945792127154-60k8ck8jir7lvsbgodu0bk0dvihsk6hg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mitaxicibertecmax",
+            "certificate_hash": "b30e2bb65ee5c1d4993a3afd58bf37fba3399831"
+          }
+        },
+        {
+          "client_id": "945792127154-s1t86tqtfi21ru7b8mcbqna4o2d9ffni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjZ8TgwKdKtS7ErmzyPSWiDmS5Y0OmnJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945792127154-s1t86tqtfi21ru7b8mcbqna4o2d9ffni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
