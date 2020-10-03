@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/colorPrimary"
-    tools:context=".view.HomeActivity" >
+    tools:context=".activities.HomeActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnDriver"
+                android:id="@+id/btnIAmDriver"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                 android:layout_margin="5dp"
                 ></Button>
             <Button
-                android:id="@+id/btnClient"
+                android:id="@+id/btnIAmClient"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"

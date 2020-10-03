@@ -4,58 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/colorPrimary"
-    tools:context=".view.SelectOptionAuthActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".activities.SelectOptionAuthActivity">
+
+    <include layout="@layout/action_bar_toolbar"></include>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:src="@drawable/icon_uber_clone"></ImageView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="40dp"
             android:text="Selecciona una opcion"
             android:textAlignment="center"
             android:textColor="@color/colorWithe"
-            android:layout_margin="40dp"
             android:textSize="20sp"
-            android:textStyle="bold"
-            ></TextView>
+            android:textStyle="bold"></TextView>
 
         <Button
-            android:id="@+id/btnIniciar"
+            android:id="@+id/btnGoToLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rounded_button"
             android:backgroundTint="@color/colorBlueLight"
-            android:background="@drawable/rounded_button"
-            android:textColor="@color/colorWithe"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:text="Ya tengo cuenta"
-            ></Button>
+            android:textColor="@color/colorWithe"></Button>
+
         <Button
-            android:id="@+id/btnRegisterAccount"
+            android:id="@+id/btnGoToRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorWithe"
-            android:background="@drawable/rounded_button"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
-            android:text="Registrar Cuenta"
-            ></Button>
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/colorWithe"
+            android:text="Registrar Cuenta"></Button>
 
 
     </LinearLayout>
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
