@@ -28,6 +28,8 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/pick_up_adress_background"
         android:text="¿a dónde vas?"
+        android:maxLines="1"
+        android:ellipsize="end"
         map:layout_constraintBottom_toTopOf="@+id/btnRequestTaxi"
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"

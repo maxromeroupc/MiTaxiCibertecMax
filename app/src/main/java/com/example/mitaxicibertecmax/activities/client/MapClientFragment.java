@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Address;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
@@ -51,6 +53,7 @@ public class MapClientFragment extends Fragment implements OnMapReadyCallback {
     private Marker mLocationMarker;
 
     private  static final int REQUEST_CODE_PERMISSION_LOCATION = 10;
+    private  static final int REQUEST_CODE_SEARCH_LOCATION = 11;
 
     private static final LocationRequest locationRequest
             = new LocationRequest()
@@ -84,9 +87,27 @@ public class MapClientFragment extends Fragment implements OnMapReadyCallback {
         txtPickUpLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(requireContext(),SearchAddressActivity.class) );
+                startActivityForResult(new Intent(requireContext(),SearchAddressActivity.class),REQUEST_CODE_SEARCH_LOCATION );
             }
         });
+
+        //txtPickUpLocation.animate().scaleX(3).scaleY(3).setDuration(1000);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch(requestCode){
+            case REQUEST_CODE_SEARCH_LOCATION:
+                if(resultCode == Activity.RESULT_OK){
+                    if(data != null){
+                        Address address = data.getParcelableExtra("address");
+                        txtPickUpLocation.setText(address.getAddressLine(0));
+                    }
+
+                }
+
+                break;
+        }
     }
 
     @Override
@@ -165,7 +186,7 @@ public class MapClientFragment extends Fragment implements OnMapReadyCallback {
 
     @SuppressLint("MissingPermission")
     private void requestLocation(){
-        //googleMap.setMyLocationEnabled(true);
+        googleMap.setMyLocationEnabled(true);
 
         fusedLocationProviderClient.getLastLocation().addOnSuccessListener(requireActivity(), new OnSuccessListener<Location>() {
             @Override
@@ -176,6 +197,8 @@ public class MapClientFragment extends Fragment implements OnMapReadyCallback {
                 );
             }
         });
+
+
     }
 
     @SuppressLint("MissingPermission")

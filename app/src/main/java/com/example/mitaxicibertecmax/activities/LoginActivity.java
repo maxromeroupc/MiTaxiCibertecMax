@@ -2,6 +2,7 @@ package com.example.mitaxicibertecmax.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.mitaxicibertecmax.R;
+import com.example.mitaxicibertecmax.activities.client.MapClientActivity;
 import com.example.mitaxicibertecmax.activities.client.MapClientFragment;
 import com.example.mitaxicibertecmax.activities.client.MapDriverActivity;
 import com.example.mitaxicibertecmax.activities.client.RegisterActivity;
@@ -88,11 +90,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             typeUser = sharedPreferences.getString("user","");
                             Intent intent;
                             if( typeUser.equalsIgnoreCase("client")){
-                                intent = new Intent( LoginActivity.this, MapClientFragment.class);
+                                Fragment fragment = new Fragment( R.layout.fragment_map_client);
+                                //startActivityFromFragment(fragment,intent,15);
+                                intent = new Intent(LoginActivity.this, MapClientActivity.class);
+                                startActivity(intent);
                             }else{
                                 intent = new Intent(LoginActivity.this, MapDriverActivity.class);
+                                startActivity(intent);
                             }
-                            startActivity(intent);
+
+
                         }
                         else{
                             Toast.makeText(LoginActivity.this, "El email o password son incorrectos.", Toast.LENGTH_SHORT).show();

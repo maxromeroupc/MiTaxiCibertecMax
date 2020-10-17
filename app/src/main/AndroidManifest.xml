@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,29 +30,38 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".activities.client.MapDriverActivity" android:label="@string/title_activity_map_driver" >
+        <activity android:name=".activities.client.MapClientActivity"
+            android:parentActivityName=".activities.LoginActivity"></activity>
 
-        </activity>
+        <activity
+            android:name=".activities.client.MapDriverActivity"
+            android:label="@string/title_activity_map_driver"></activity>
         <activity
             android:name=".activities.LoginActivity"
             android:parentActivityName=".activities.SelectOptionAuthActivity" />
         <activity
             android:name=".activities.client.RegisterActivity"
             android:parentActivityName=".activities.SelectOptionAuthActivity" />
-        <activity android:name=".activities.driver.RegisterDriverActivity"
-            android:parentActivityName=".activities.SelectOptionAuthActivity"></activity>
-        <activity android:name=".activities.client.SearchAddressActivity" />
+        <activity
+            android:name=".activities.driver.RegisterDriverActivity"
+            android:parentActivityName=".activities.SelectOptionAuthActivity" />
+        <activity android:name=".activities.client.SearchAddressActivity"
+            android:parentActivityName=".activities.client.MapClientActivity"
+            ></activity>
         <activity
             android:name=".activities.SelectOptionAuthActivity"
-            android:parentActivityName=".activities.HomeActivity" />
-        <activity android:name=".activities.HomeActivity" >
+            android:parentActivityName=".activities.HomeActivity" >
 
         </activity>
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

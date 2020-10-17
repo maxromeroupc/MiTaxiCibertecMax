@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mitaxicibertecmax.R;
+import com.example.mitaxicibertecmax.activities.client.MapClientActivity;
 import com.example.mitaxicibertecmax.activities.client.MapClientFragment;
 import com.example.mitaxicibertecmax.activities.client.MapDriverActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,17 +67,20 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onStart() {
         super.onStart();
+
         if(FirebaseAuth.getInstance().getCurrentUser() != null ){
             String typeUser = "";
             typeUser = sharedPreferences.getString("user","");
             Intent intent;
             if( typeUser.equalsIgnoreCase("client")){
-                intent = new Intent( HomeActivity.this, MapClientFragment.class);
+                intent = new Intent( HomeActivity.this, MapClientActivity.class);
             }else{
                 intent = new Intent(HomeActivity.this, MapDriverActivity.class);
             }
             startActivity(intent);
         }
+
+
     }
 
     private void goToSelectAuth(){
